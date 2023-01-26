@@ -1,21 +1,20 @@
 import './App.css';
+// import Header from './Components/Header';
+// import Footer from './Components/Footer';
+
+import Student from "./Components/Student";
 
 function App() {
+  // let name = "Web3mantra"
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Hello Shahid
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Header />
+      <h1>{name}</h1>
+      <Footer /> */}
+
+      <Student
+        name="Shahid"
+        age={24} />
     </div>
   );
 }
