@@ -1,13 +1,11 @@
-import Footer from "./Footer"
+// import Footer from "./Footer"
 
  function Header() {
      return (
        <>
          <div className="header">
-      <h1>This is Header</h1>
-           <h3 id="tutor">Hello this is my Tutorial</h3>
-           <h3 style={ { backgroundColor: "black", color: "green"}}>Hey i am Shahid</h3> 
-           <Footer />
+           {/* <h1>USeState Hooks</h1> */}
+           <h1>UseEffect Hooks</h1>
            </div>
       </>
   )
