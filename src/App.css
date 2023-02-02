@@ -43,6 +43,10 @@
     text-align: center;
     background-color: #9cb2f4;
     padding: 8px 0px 8px 0px;
+    display: flex;
+    justify-content: space-evenly;
+    cursor: pointer;
+    
 }
 
 h1{

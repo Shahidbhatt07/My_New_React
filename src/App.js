@@ -1,50 +1,32 @@
-import './App.css';
-import Header from './Components/Header';
-import React, {useState, useEffect} from 'react';
+import "./App.css";
+import Header from "./Components/Header";
+import React, { useState, useEffect } from "react";
+import Home from "./Components/Home";
+import About from "./Components/About";
+import Contact from "./Components/Contact";
+import Error from "./Components/Error";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 function App() {
-
-  const [state, setState] = useState(2);
-  const [data, setData] = useState([]);  
-
-  useEffect(()=> {
-    async function getData() {
-      const get = await fetch(`https://hub.dummyapis.com/employee?noofRecords=${state}&idStarts=1001`)
-      const res = await get.json();
-      setData(res)
-      console.log(res);
-    }
-    getData();
-
-    document.title = `${state} Employes Online`
-    
-  } ,[state])
-  
-
   return (
-    <div >
-      <Header />
-      <button className='btn' onClick={() => setState(state + 2)}>Click me {state}</button>
-      <div className='iconName'>
-        <h3>FirstName</h3>
-        <h3>LastName</h3>
-        <h3>Email</h3>
-        <h3>Age</h3>
+    <Router>
+      <div>
+        <Header />
+        <Routes>
+          {/* Home */}
+          <Route path="/" element={<Home />}/> 
+         
+          {/* About */}
+          <Route path="/about"element={<About />}/>
+          
+          {/* Contact */}
+          <Route path="/contact" element={<Contact />} />
+          
+          {/* Error */}
+          <Route path="*" element={<Error/>}></Route>
+        </Routes>
       </div>
-      {
-        data.map((element, index) => {
-          return (
-            <div className='data' key = {index}>
-              <h3>{element.firstName }</h3>
-              <h3>{element.lastName }</h3>
-              <h3>{element.email }</h3>
-              <h3>{element.age }</h3>
-            </div>
-            
-            )
-          })
-        }
-        </div>
+    </Router>
   );
 }
 
