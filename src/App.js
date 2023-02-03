@@ -23,6 +23,7 @@ function App() {
           
           {/* Contact */}
           <Route path="/contact" element={<Contact />}>
+              <Route index element={ <Insta/>}/>
               <Route path="insta" element={ <Insta/>} />
               <Route path="mail" element={ <Mail/>} />
           </Route>
