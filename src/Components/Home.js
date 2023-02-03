@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link, Outlet } from 'react-router-dom';
 
 const Home = () => {
     const [state, setState] = useState(2);
@@ -29,16 +30,19 @@ const Home = () => {
       {
         data.map((element, index) => {
           return (
+            <Link to={`/${element.id}`}>
             <div className='data' key = {index}>
               <h3>{element.firstName }</h3>
               <h3>{element.lastName }</h3>
               <h3>{element.email }</h3>
               <h3>{element.age }</h3>
-            </div>
+              </div>
+              </Link>
             
             )
           })
-        }
+      }
+      <Outlet/>
     </div>
   )
 }

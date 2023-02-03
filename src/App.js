@@ -8,6 +8,7 @@ import Error from "./Components/Error";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Insta from "./Components/Insta";
 import Mail from "./Components/Mail";
+import Userdetails from "./Components/Userdetails";
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
         <Routes>
           {/* Home */}
           <Route path="/" element={<Home />}/> 
-         
+          <Route path=":userId" element={<Userdetails />} />
+          
           {/* About */}
           <Route path="/about"element={<About />}/>
           
