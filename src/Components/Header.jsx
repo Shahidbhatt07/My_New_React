@@ -1,14 +1,23 @@
 // import Footer from "./Footer"
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
- function Header() {
+function Header() {
+  const navLinkStyles = ({ isActive }) => {
+    return {
+      fontWeight: isActive ? "bold" : "normal",
+      textDecoration: isActive ? "none" : "underline",
+      color : isActive ? "green" : "black",
+      fontSize : "30px"
+      
+    };
+  };
      return (
        <>
          <div className="header">
            {/* <h1>USeState Hooks</h1> */}
-           <Link to={'/'}><h1>Home</h1></Link>
-           <Link to={'/About'}><h1>About</h1></Link>
-           <Link to={'/Contact'}><h1>Contact</h1></Link>
+           <NavLink style={navLinkStyles} to={'/'} > Home</NavLink>
+           <NavLink style={navLinkStyles} to={'/About'}>About</NavLink>
+           <NavLink style={navLinkStyles} to={'/Contact'}>Contact</NavLink>
            </div>
       </>
   )

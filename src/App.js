@@ -5,7 +5,9 @@ import Home from "./Components/Home";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Error from "./Components/Error";
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Insta from "./Components/Insta";
+import Mail from "./Components/Mail";
 
 function App() {
   return (
@@ -20,10 +22,12 @@ function App() {
           <Route path="/about"element={<About />}/>
           
           {/* Contact */}
-          <Route path="/contact" element={<Contact />} />
-          
+          <Route path="/contact" element={<Contact />}>
+              <Route path="insta" element={ <Insta/>} />
+              <Route path="mail" element={ <Mail/>} />
+          </Route>
           {/* Error */}
-          <Route path="*" element={<Error/>}></Route>
+          <Route path="*" element={<Error />}/>
         </Routes>
       </div>
     </Router>

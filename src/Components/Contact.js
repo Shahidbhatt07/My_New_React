@@ -1,10 +1,14 @@
 import React from 'react'
+import { Link, Outlet } from 'react-router-dom'
 
 const Contact = () => {
   return (
-    <div>
+    <>
       <h1>Hello i am contact</h1>
-    </div>
+      <button className='btn'><Link to = {"Insta"}> contact via Instagram</Link></button>
+      <button className='btn'><Link to={"Mail"} >contact via Mail</Link></button>
+      <Outlet />
+    </>
   )
 }
 
